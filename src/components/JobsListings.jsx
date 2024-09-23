@@ -9,8 +9,9 @@ const JobsListings = ({isHome = false}) => {
 
     useEffect (() => {
         const fetchJobs = async () => { //asynch function to fetch jobs from the json server 
+            const apiUrl = isHome ? 'http://localhost:8000/jobs?_limit=3' : 'http://localhost:8000/jobs'
             try{ //catching errors if there is any issue while getting the jobs from our server
-            const response = await fetch('http://localhost:8000/jobs') //fetching data
+            const response = await fetch(apiUrl) //fetching data
             const data = await response.json() //the data got from fetching
             setJobs(data); //the data got is placed in setJobs setting part of our data in setJobs 
             } catch (error){
