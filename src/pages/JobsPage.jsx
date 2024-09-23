@@ -1,8 +1,11 @@
 import React from 'react'
+import JobsListings from '../components/JobsListings'
 
 const JobsPage = () => {
   return (
-    <div>JobsPage</div>
+    <section className="bg-blue-100 px-4 py-6">
+        <JobsListings />
+    </section>
   )
 }
 
